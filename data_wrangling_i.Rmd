@@ -1,0 +1,25 @@
+---
+title: "Data Import"
+author: "Junxian Chen (jc5314)"
+date: "9/17/2019"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+
+## Load in the dataset
+
+ˆ
+```{r}
+## read in a dataset
+litters_data = read_csv(file = "./FAS_litters.csv")
+
+names(litters_data)
+
+litters_data = janitor::clean_names(litters_data)
+names(litters_data)
+```
