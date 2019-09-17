@@ -65,7 +65,22 @@ tail(litters_data)
 ```{r}
 library(readxl)
 
-mlb11_data = read_excel("data/mlb11.xlsx", n_max = 20)
+mlb11_data = read_excel("./mlb11.xlsx", n_max = 20)
+#mlb11_data = read_excel(
+#  path = "./mlb11.xlsx",
+#  sheet = xxx,
+#  range = "A1:B7")
+
 head(mlb11_data, 5)
+```
+
+## Read in SAS 
+
+```{r}
+library(haven)
+
+pulse_data = read_sas("./public_pulse_data.sas7bdat")
+
+head(pulse_data, 5)
 ```
 
