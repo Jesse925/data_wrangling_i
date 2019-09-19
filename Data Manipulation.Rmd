@@ -79,4 +79,24 @@ arrange(litters_data, pups_born_alive)
 arrange(litters_data, pups_born_alive, gd0_weight)
 ```
 
+## Example
+
+### First option
+
+```{r}
+litters_data = 
+  read_csv("./FAS_litters.csv", col_types = "ccddiiii") %>%
+  janitor::clean_names() %>%
+  select(-pups_survive) %>%
+  mutate(
+    wt_gain = gd18_weight - gd0_weight,
+    group = str_to_lower(group)) %>% 
+  drop_na(wt_gain)
+
+litters_data
+```
+
+```{r, eval = FALSE}
+litters_data %>% view()
+```
 
