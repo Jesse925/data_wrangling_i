@@ -74,6 +74,13 @@ mlb11_data = read_excel("./mlb11.xlsx", n_max = 20)
 head(mlb11_data, 5)
 ```
 
+## Export the excel dataset as csv
+
+```{r}
+write_csv(mlb11_data, path = "./mlb11.csv")
+```
+
+
 ## Read in SAS 
 
 ```{r}
